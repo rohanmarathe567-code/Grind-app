@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1040"/>
+      <stop offset="100%" style="stop-color:#09090d"/>
+    </linearGradient>
+    <linearGradient id="glyph" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c6dff"/>
+      <stop offset="100%" style="stop-color:#00e5a0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="110" fill="url(#bg)"/>
+  <!-- Subtle radial glow -->
+  <radialGradient id="glow-bg" cx="50%" cy="40%" r="55%">
+    <stop offset="0%" style="stop-color:#7c6dff;stop-opacity:0.18"/>
+    <stop offset="100%" style="stop-color:#7c6dff;stop-opacity:0"/>
+  </radialGradient>
+  <rect width="512" height="512" rx="110" fill="url(#glow-bg)"/>
+  <!-- G letterform -->
+  <text x="256" y="355" font-family="Arial Black, sans-serif" font-size="310" font-weight="900"
+        text-anchor="middle" fill="url(#glyph)" filter="url(#glow)"
+        letter-spacing="-10">G</text>
+  <!-- Thin accent line under logo -->
+  <rect x="160" y="388" width="192" height="4" rx="2" fill="url(#glyph)" opacity="0.6"/>
+</svg>

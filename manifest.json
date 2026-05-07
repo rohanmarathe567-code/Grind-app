@@ -1,0 +1,23 @@
+{
+  "name": "GRIND — Level Up Your Body",
+  "short_name": "GRIND",
+  "description": "The gym app that turns every rep into a living Power Signature. Track, level up, and share your progress.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#09090d",
+  "theme_color": "#7c6dff",
+  "orientation": "portrait-primary",
+  "categories": ["fitness", "health", "sports"],
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Log Workout",
+      "short_name": "Log",
+      "description": "Start a new workout session",
+      "url": "./#log"
+    }
+  ]
+}
