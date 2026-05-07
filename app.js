@@ -265,7 +265,7 @@ function renderHome() {
 
   const el = document.getElementById('last-session-card');
   if (!state.workouts.length) {
-    el.className='last-session-empty'; el.innerHTML='No workouts yet — get after it.';
+    el.className='last-session-empty'; el.innerHTML='No workouts logged yet. Get moving.';
   } else {
     const w = state.workouts[state.workouts.length-1];
     el.className='last-session-card';
@@ -829,7 +829,7 @@ function refreshCoachPage() {
   const hasKey = !!getApiKey();
   document.getElementById('coach-no-key').classList.toggle('hidden', hasKey);
   document.getElementById('coach-chat-wrap').classList.toggle('hidden', !hasKey);
-  if (hasKey && !chatHistory.length) addAIMessage("Hey! I'm your GRIND AI Coach. I know your full workout history and stats. Ask me anything — from today's training plan to how to bust through a plateau.");
+  if (hasKey && !chatHistory.length) addAIMessage("Hey! I'm your GRIND AI Coach. I know your full workout history and stats. Ask me anything. Training plan, plateau advice, recovery tips - I got you.");
 }
 
 function saveApiKey() {
@@ -902,8 +902,8 @@ function scrollChat() {
 
 async function callClaude(messages) {
   const key = getApiKey();
-  if (!key) return 'Add your Claude API key in ⚙️ Settings to use AI features.';
-  const system = `You are GRIND AI Coach, a no-nonsense personal fitness coach inside a gym tracking app. You know the user's full workout history, stats and goals. Be concise, motivating and specific. Never give generic advice — always reference their actual data.\n\n${buildContext()}`;
+  if (!key) return 'Add your API key in the guide to use AI features.';
+  const system = `You are GRIND AI Coach, a no-nonsense personal fitness coach inside a gym tracking app. You know the user's full workout history, stats and goals. Be concise, motivating and specific. Always reference their actual data, never give generic advice.\n\n${buildContext()}`;
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method:  'POST',
@@ -1029,14 +1029,14 @@ function shareSignature() {
 
   // Footer
   ctx.font='11px Arial,sans-serif'; ctx.textAlign='center'; ctx.fillStyle='rgba(255,255,255,0.18)';
-  ctx.fillText('grind.app — Turn every rep into power',W/2,H-18);
+  ctx.fillText('grind.app  |  Turn every rep into power',W/2,H-18);
 
   // Export or share
   const dataURL=c.toDataURL('image/png');
   if (navigator.share && navigator.canShare && navigator.canShare({files:[]})) {
     c.toBlob(blob=>{
       const file=new File([blob],'grind-power-signature.png',{type:'image/png'});
-      navigator.share({ title:'My GRIND Power Signature', text:`Level ${getLevel()} athlete — check out my Power Signature!`, files:[file] }).catch(()=>_downloadShareCard(dataURL));
+      navigator.share({ title:'My GRIND Power Signature', text:`Level ${getLevel()} athlete. Check out my Power Signature!`, files:[file] }).catch(()=>_downloadShareCard(dataURL));
     },'image/png');
   } else {
     _downloadShareCard(dataURL);
