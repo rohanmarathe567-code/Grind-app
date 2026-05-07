@@ -43,7 +43,7 @@
       <div class="landing-tagline">Level Up Your Body</div>
     </div>
     <canvas id="landing-radar" width="260" height="260"></canvas>
-    <p class="landing-desc">The gym app that turns every rep into a living, growing <strong>Power Signature</strong> — unique to you.</p>
+    <p class="landing-desc">The gym app that turns every rep into a living, growing <strong>Power Signature</strong>. Unique to you.</p>
     <div class="landing-features">
       <div class="landing-feat"><span>⚡</span><span>XP & Levels</span></div>
       <div class="landing-feat"><span>🏆</span><span>Achievements</span></div>
@@ -100,7 +100,7 @@
 
   <!-- STREAK REMINDER BANNER -->
   <div id="streak-banner" class="streak-banner hidden">
-    🔥 You haven't trained today — don't break your <span id="streak-banner-num"></span>-day streak!
+    🔥 You haven't trained today. Don't break your <span id="streak-banner-num"></span>-day streak!
     <button onclick="dismissStreakBanner()">✕</button>
   </div>
 
@@ -143,7 +143,7 @@
       <div class="section-label">BODY WEIGHT</div>
       <div class="bodyweight-card">
         <div class="bw-left">
-          <div id="bw-current" class="bw-current">— kg</div>
+          <div id="bw-current" class="bw-current">-- kg</div>
           <div class="bw-label">Current Weight</div>
         </div>
         <div class="bw-right">
@@ -153,7 +153,7 @@
       </div>
 
       <div class="section-label">LAST SESSION</div>
-      <div id="last-session-card" class="last-session-empty">No workouts yet — get after it.</div>
+      <div id="last-session-card" class="last-session-empty">No workouts logged yet. Get moving.</div>
     </div>
 
     <!-- LOG -->
@@ -213,10 +213,10 @@
       <div class="coach-hero">
         <div class="coach-avatar">🤖</div>
         <div class="coach-title">AI COACH</div>
-        <div class="coach-subtitle">Powered by Claude</div>
+        <div class="coach-subtitle">Powered by AI</div>
       </div>
       <div id="coach-no-key" class="coach-no-key">
-        <p>Add your free Claude API key in <strong>⚙️ Settings</strong> to unlock your personal AI coach.</p>
+        <p>Add your AI API key in the guide to unlock your personal coach.</p>
         <button class="btn-pill btn-primary" onclick="openSettings()">Open Settings</button>
       </div>
       <div id="coach-chat-wrap" class="hidden">
@@ -275,7 +275,7 @@
       <div class="set-field"><label class="set-label">Weight (kg)</label><input id="set-weight" class="set-input" type="number" min="0" step="0.5" placeholder="0"/></div>
       <div class="set-field"><label class="set-label">Reps</label><input id="set-reps" class="set-input" type="number" min="1" step="1" placeholder="0"/></div>
     </div>
-    <div class="orm-preview hidden" id="orm-preview">Est. 1RM: <span id="orm-val">—</span></div>
+    <div class="orm-preview hidden" id="orm-preview">Est. 1RM: <span id="orm-val">0</span> kg</div>
     <button class="btn-pill btn-primary" style="width:100%;margin-top:16px" onclick="confirmSet()">Add Set ↵</button>
   </div>
 </div>
@@ -302,7 +302,7 @@
       <div class="guide-step-num">2</div>
       <div class="guide-step-body">
         <div class="guide-step-title">Watch Your Power Signature Grow</div>
-        <p class="guide-step-desc">Every session updates your radar — <span style="color:#7c6dff">STR</span>, <span style="color:#00e5a0">END</span>, <span style="color:#ffd166">PWR</span>, <span style="color:#ff9de2">AGL</span>, <span style="color:#5edfff">REC</span>. Your shape is unique to how you train. View it in <strong>POWER</strong>.</p>
+        <p class="guide-step-desc">Every session updates your radar: <span style="color:#7c6dff">STR</span>, <span style="color:#00e5a0">END</span>, <span style="color:#ffd166">PWR</span>, <span style="color:#ff9de2">AGL</span>, <span style="color:#5edfff">REC</span>. Your shape is unique to how you train. View it in <strong>POWER</strong>.</p>
       </div>
     </div>
 
@@ -320,9 +320,9 @@
       <div class="guide-step-num">4</div>
       <div class="guide-step-body">
         <div class="guide-step-title">Activate Your AI Coach</div>
-        <p class="guide-step-desc">Add a free Claude API key below to unlock the AI Coach — it knows your full history, stats, and PRs and gives personalised advice.</p>
-        <p class="guide-step-desc" style="margin-top:6px">Get your key free at <strong style="color:var(--primary)">console.anthropic.com</strong> → API Keys.</p>
-        <input id="api-key-input" class="ob-input" type="password" placeholder="sk-ant-api03-..." style="margin-top:10px"/>
+        <p class="guide-step-desc">Add your AI API key below to unlock the coach. It knows your full history, stats, and PRs and gives you advice based on your actual data.</p>
+        <p class="guide-step-desc" style="margin-top:6px">Get your key at <strong style="color:var(--primary)">console.anthropic.com</strong> → API Keys.</p>
+        <input id="api-key-input" class="ob-input" type="password" placeholder="sk-ant-..." style="margin-top:10px"/>
         <button class="btn-pill btn-primary" style="margin-top:10px;width:100%" onclick="saveApiKey()">Save API Key →</button>
       </div>
     </div>
